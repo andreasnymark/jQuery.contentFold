@@ -34,7 +34,7 @@ To change default values, simply:
 
 ### HTML output
 
-By default this:
+#### Default HTML
 
 	<h2>Headline</h2>	
 	<p>Content. </p>
@@ -42,8 +42,7 @@ By default this:
 	<p>Content. </p>
 	<p>Content. </p>
 	
-
-will render this:
+#### Collapsed HTML
 
 	<h2 class="is-collapsed">Headline</h2>	
 	<div class="is-hidden">
@@ -54,3 +53,13 @@ will render this:
 		<p>Content. </p>
 		<p>Content. </p>
 	</div>
+	
+#### Open HTML
+
+	<h2 class="is-open">Headline</h2>	
+	<div class="is-visible">
+		<p>Content. </p>
+	</div>
+
+
+
