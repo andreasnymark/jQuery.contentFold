@@ -10,7 +10,7 @@ Collapse content between two elements and wraps it in a another element.
 
 ## How to use
 
-Simply add the plugin and then add selector on parent elenemt:
+Simply add the plugin and then add selector on parent element:
 
 `$('.collapser').contentCollapser();`
 
