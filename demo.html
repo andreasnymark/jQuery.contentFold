@@ -19,14 +19,15 @@
 				padding: 0;
 				margin: 0;
 			}
-				display: block;
-			}
-			.is-hidden {
-				display: none;
-			}
-			.is-opened,
+			.is-expanded,
 			.is-collapsed {
 				cursor: pointer;
+			}
+			.is-expanded + .content {
+				display: block;
+			}
+			.is-collapsed + .content {
+				display: none;
 			}
 			.is-opened:after,
 			.is-collapsed:after {
@@ -59,13 +60,9 @@
 			
 	    </section>
 	    
-	    
-	    
-	    
-	    
-	    
-		
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="file:///Users/ksdajoh2/Dropbox/Frameworks/jQuery/jquery-1.7.1.min.js"><\/script>')</script>
 		<script src="jquery.contentCollapser.js"></script>
 		<script>
 			$('.collapser').contentCollapser();
