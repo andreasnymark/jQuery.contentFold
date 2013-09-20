@@ -20,7 +20,7 @@ To change default values, simply:
 
 	$('.collapser').contentCollapser({
 		element:'h1',
-		classHide:'hide'
+		classCollapsed:'is-collapsed'
 	});
 
 ### Options
