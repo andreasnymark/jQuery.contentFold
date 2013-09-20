@@ -25,12 +25,11 @@ To change default values, simply:
 
 ### Options
 
-	parent: '.collapser', //parent element 
-	element: 'h2',	// head element (everything between each h2 will be wrapped)
-	classHeadCollapsed: 'is-collapsed', // class name on collapsed head
-	classHeadOpen: 'is-open',	// class name on open header
-	classHide: 'is-hidden', // class name on hidden content
-	classShow: 'is-visible' // class name on visible content
+	element: 'h2',	// head element (every sibling after a h2 will be wrapped within a <div class="content" />)
+	classCollapsed: 'is-collapsed', // class name on collapsed head
+	classExpanded: 'is-expanded',	// class name on expanded head
+	classContent: 'content', // class name on hidden content
+
 
 ### HTML output
 
@@ -45,21 +44,32 @@ To change default values, simply:
 #### Collapsed HTML
 
 	<h2 class="is-collapsed">Headline</h2>	
-	<div class="is-hidden">
+	<div class="content">
 		<p>Content. </p>
 	</div>
 	<h2 class="is-collapsed">Headline</h2>	
-	<div class="is-hidden">
+	<div class="content">
 		<p>Content. </p>
 		<p>Content. </p>
 	</div>
 	
 #### Open HTML
 
-	<h2 class="is-open">Headline</h2>	
-	<div class="is-visible">
+	<h2 class="is-expanded">Headline</h2>	
+	<div class="content">
 		<p>Content. </p>
 	</div>
+	
+### CSS 
+
+This you add to your stylesheet in order to work. The javascript simply handles the wrapping of elements and toggling of classes. 
+
+	.is-expanded + .content {
+		display: block;
+	}
+	.is-collapsed + .content {
+		display: none;
+	}
 
 
 
