@@ -17,7 +17,7 @@
             initSize: 0,
             element: 'h2',
             collapsed: 'is-collapsed',
-            expanded: 'is-opened',
+            expanded: 'is-expanded',
             content: 'content-fold'
         };  
         var options = $.extend(defaults, options); 
