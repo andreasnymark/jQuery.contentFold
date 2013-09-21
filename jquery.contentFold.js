@@ -15,10 +15,10 @@
 		*/
 		var defaults = {  
 			initSize: 0,
-		    element: 'h2',
-		    classCollapsed: 'is-collapsed',
-		    classExpanded: 'is-opened',
-		    classContent: 'content-fold'
+			element: 'h2',
+			classCollapsed: 'is-collapsed',
+			classExpanded: 'is-opened',
+			classContent: 'content-fold'
 		};  
 		var options = $.extend(defaults, options); 
 		/*
@@ -52,29 +52,29 @@
 						** Wrap everything after the “default.element” (<H2> by default)
 						** Adds the class used to toggle show/hide.
 						*/
-					    $(this)
-					    	.nextUntil(options.element)
-					    	.wrapAll('<div class="'+options.classContent+'" />');
-					    /*
-					    **	
-					    ** click to open. Toggle class names. Use :after or 
-					    ** background images in your CSS to give visual input.
-					    */
-					    $(this).find('a').on('click touchstart', function(e) {
-					    	$(this)
-					    		/*
-					    		**	
-					    		** Toggle class on “default.element” to show/hide.
-					    		*/
-					    		.parent()
-					    			.toggleClass(options.classCollapsed)
-					    			.toggleClass(options.classExpanded);
-					    		/*
-					    		**	
-					    		** Toggle class on wrapped content to show/hide.
-					    		*/
-					    	e.preventDefault();
-					    });
+						$(this)
+							.nextUntil(options.element)
+							.wrapAll('<div class="'+options.classContent+'" />');
+						/*
+						**	
+						** click to open. Toggle class names. Use :after or 
+						** background images in your CSS to give visual input.
+						*/
+						$(this).find('a').on('click touchstart', function(e) {
+							$(this)
+							/*
+							**	
+							** Toggle class on “default.element” to show/hide.
+							*/
+							.parent()
+								.toggleClass(options.classCollapsed)
+								.toggleClass(options.classExpanded);
+							/*
+							**	
+							** Toggle class on wrapped content to show/hide.
+							*/
+							e.preventDefault();
+						});
 					});
 			});
 		}
