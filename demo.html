@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>
-			Content collapser
+			Content fold
 		</title>
 		<meta http-equiv="Content-Language" content="en" />
 		<style>
@@ -23,10 +23,10 @@
 			.is-collapsed {
 				cursor: pointer;
 			}
-			.is-expanded + .content {
+			.is-expanded + .content-fold {
 				display: block;
 			}
-			.is-collapsed + .content {
+			.is-collapsed + .content-fold {
 				display: none;
 			}
 			.is-opened:after,
@@ -43,7 +43,7 @@
 	</head>
 	<body>
 	
-		<section class="collapser">          
+		<section class="main">          
 			
 			<h2>First headline</h2>
 			<p class="">An average professional typist types usually in speeds of 50 to 80 wpm, while some positions can require 80 to 95 (usually the minimum required for dispatch positions and other time-sensitive typing jobs), and some advanced typists work at speeds above 120 wpm.[4][5] Two-finger typists, sometimes also referred to as "hunt and peck" typists, commonly reach sustained speeds of about 37 wpm for memorized text and 27 wpm when copying text, but in bursts may be able to reach speeds of 60 to 70 wpm.[3] From the 1920s through the 1970s, typing speed (along with shorthand speed) was an important secretarial qualification and typing contests were popular and often publicized by typewriter companies as promotional tools. </p>
@@ -63,9 +63,9 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="file:///Users/ksdajoh2/Dropbox/Frameworks/jQuery/jquery-1.7.1.min.js"><\/script>')</script>
-		<script src="jquery.contentCollapser.js"></script>
+		<script src="jquery.contentFold.js"></script>
 		<script>
-			$('.collapser').contentCollapser();
+			$('.main').contentFold();
 		</script>
 	</body>
 </html>
