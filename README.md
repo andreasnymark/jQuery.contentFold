@@ -16,16 +16,27 @@ Simply add the plugin and then run the plugin on parent element with `$('.main')
 
 By default, the plugin runs at any resolution. To change this you need to add a width when you initiate the plugin: `$('.main').contentFold({initSize:700});` Remember also, you need to set all styles for each class name. This javascript only toggles a specific class names, no inline styles are added.
 
+## Browser support
+
+Test it. So far, it works in the following browsers
+
+* Mobile Safari, iOS6
+* Safari 6, Mac OSX
+* Chrome 26, Mac OSX
+* Firefox 23, Mac OSX
+* Opera 15, Mac OSX
+
 ### Options
 
 #### Default values 
 
-	initSize: 0,					// at what viewport width we initiate the plugin.
-									// default is 0 = runs at all resolutions.
-	element: 'h2',					// head element (every sibling after a h2 will be wrapped within a <div class="content" />)
-	classCollapsed: 'is-collapsed', // class name on collapsed head
-	classExpanded: 'is-expanded',	// class name on expanded head
-	classContent: 'content', 		// class name on hidden content
+	initSize: 0,                    // at what viewport width we initiate the plugin.
+                                    // default is 0 = runs at all resolutions.
+	element: 'h2',                  // head element (every following sibling element after this element will be 
+	                                // wrapped within a <div class="content-fold" />)
+	collapsed: 'is-collapsed',      // class name on collapsed head
+	expanded: 'is-expanded',        // class name on expanded head
+	content: 'content-fold',        // class name on folded content
 
 #### Override default values
 
@@ -33,7 +44,7 @@ To change default values, simply add them when you initiate the script:
 
 	$('.main').contentFold({
 		element:'h3',
-		classCollapsed:'hidden'
+		collapsed:'hidden'
 	});
 
 
