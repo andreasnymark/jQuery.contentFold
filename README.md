@@ -1,4 +1,4 @@
-# jQuery.contentCollapser.js
+# jQuery.contentFold.js
 
 ## Version 0.2
 
@@ -6,29 +6,33 @@
 
 ## What does it do
 
-Collapse content between two elements and wraps it in a another element.
+Wrap, folds and hides content after every element specified, to give a better overview of an article. By default, content followed after a H2 is hidden. Primary use is for long articles on devices with small screens. Inspired of Mobile Wikipedia.
 
 ## How to use
 
-Simply add the plugin and then add selector on parent element:
+Simply add the plugin and then run the plugin on parent element:
 
-`$('.collapser').contentCollapser();`
+`$('.main').contentFold();`
 
-You need to set all styles for each class name. This javascript only removes, adds and toogle class names.
-
-To change default values, simply:
-
-	$('.collapser').contentCollapser({
-		element:'h1',
-		classCollapsed:'is-collapsed'
-	});
+You need to set all styles for each class name. This javascript only removes, adds and toggles a specific class names.
 
 ### Options
 
-	element: 'h2',	// head element (every sibling after a h2 will be wrapped within a <div class="content" />)
+#### Default values 
+
+	element: 'h2',					// head element (every sibling after a h2 will be wrapped within a <div class="content" />)
 	classCollapsed: 'is-collapsed', // class name on collapsed head
 	classExpanded: 'is-expanded',	// class name on expanded head
-	classContent: 'content', // class name on hidden content
+	classContent: 'content', 		// class name on hidden content
+
+#### Override default values
+
+To change default values, simply add them when you initiate the script:
+
+	$('.msin').contentFold({
+		element:'h3',
+		classCollapsed:'hidden'
+	});
 
 
 ### HTML output
@@ -43,20 +47,20 @@ To change default values, simply:
 	
 #### Collapsed HTML
 
-	<h2 class="is-collapsed">Headline</h2>	
-	<div class="content">
+	<h2 class="is-collapsed"><a href="javascript:;">Headline</a></h2>	
+	<div class="content-fold">
 		<p>Content. </p>
 	</div>
-	<h2 class="is-collapsed">Headline</h2>	
-	<div class="content">
+	<h2 class="is-collapsed"><a href="javascript:;">Headline</a></h2>	
+	<div class="content-fold">
 		<p>Content. </p>
 		<p>Content. </p>
 	</div>
 	
 #### Open HTML
 
-	<h2 class="is-expanded">Headline</h2>	
-	<div class="content">
+	<h2 class="is-expanded"><a href="javascript:;">Headline</a></h2>	
+	<div class="content-fold">
 		<p>Content. </p>
 	</div>
 	
@@ -64,10 +68,10 @@ To change default values, simply:
 
 This you add to your stylesheet in order to work. The javascript simply handles the wrapping of elements and toggling of classes. 
 
-	.is-expanded + .content {
+	.is-expanded + .content-fold {
 		display: block;
 	}
-	.is-collapsed + .content {
+	.is-collapsed + .content-fold {
 		display: none;
 	}
 
