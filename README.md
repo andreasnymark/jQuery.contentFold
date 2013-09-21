@@ -29,7 +29,7 @@ You need to set all styles for each class name. This javascript only removes, ad
 
 To change default values, simply add them when you initiate the script:
 
-	$('.msin').contentFold({
+	$('.main').contentFold({
 		element:'h3',
 		classCollapsed:'hidden'
 	});
