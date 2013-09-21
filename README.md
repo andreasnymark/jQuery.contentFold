@@ -6,20 +6,22 @@
 
 ## What does it do
 
-Wrap, folds and hides content after every element specified, to give a better overview of an article. By default, content followed after a H2 is hidden. Primary use is for long articles on devices with small screens. Inspired of Mobile Wikipedia.
+Wrap, folds and hides content following a specified element. Purpose is to give a better overview of an article. By default, content followed after a `<h2 />` is hidden. An option to specify a certain width for the plugin to initiate is available. 
+
+Primary use is for long articles on devices with small screens. Inspiration comes from Mobile Wikipedia.
 
 ## How to use
 
-Simply add the plugin and then run the plugin on parent element:
+Simply add the plugin and then run the plugin on parent element with `$('.main').contentFold();`
 
-`$('.main').contentFold();`
-
-You need to set all styles for each class name. This javascript only removes, adds and toggles a specific class names.
+By default, the plugin runs at any resolution. To change this you need to add a width when you initiate the plugin: `$('.main').contentFold({initSize:700});` Remember also, you need to set all styles for each class name. This javascript only toggles a specific class names, no inline styles are added.
 
 ### Options
 
 #### Default values 
 
+	initSize: 0,					// at what viewport width we initiate the plugin.
+									// default is 0 = runs at all resolutions.
 	element: 'h2',					// head element (every sibling after a h2 will be wrapped within a <div class="content" />)
 	classCollapsed: 'is-collapsed', // class name on collapsed head
 	classExpanded: 'is-expanded',	// class name on expanded head
