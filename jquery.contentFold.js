@@ -16,9 +16,9 @@
         var defaults = {  
             initSize: 0,
             element: 'h2',
-            classCollapsed: 'is-collapsed',
-            classExpanded: 'is-opened',
-            classContent: 'content-fold'
+            collapsed: 'is-collapsed',
+            expanded: 'is-opened',
+            content: 'content-fold'
         };  
         var options = $.extend(defaults, options); 
         /*
@@ -44,7 +44,7 @@
                 */
                 $(this)
                     .find(options.element)
-                    .addClass(options.classCollapsed)
+                    .addClass(options.collapsed)
                     .wrapInner('<a href="javascript:;" />')
                     .each(function(){ 
                         /*
@@ -54,7 +54,7 @@
                         */
                         $(this)
                             .nextUntil(options.element)
-                            .wrapAll('<div class="'+options.classContent+'" />');
+                            .wrapAll('<div class="'+options.content+'" />');
                         /*
                         **	
                         ** click to open. Toggle class names. Use :after or 
@@ -67,8 +67,8 @@
                             */
                             $(this)
                                 .parent()
-                            	.toggleClass(options.classCollapsed)
-                            	.toggleClass(options.classExpanded);
+                            	.toggleClass(options.collapsed)
+                            	.toggleClass(options.expanded);
                             e.preventDefault();
                         });
                 });
